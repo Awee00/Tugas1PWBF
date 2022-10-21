@@ -1,0 +1,8 @@
+<h1>Daftar Tulisan dari {{author.name}}</h1>
+<ul>
+    {% for entry in author.entry_set.all %}
+        <li>
+            <a href="{% url 'blogs:entry_detail' entry.id %}">{{entry.headline}}</a>
+        </li>
+    {% endfor %}
+</ul>

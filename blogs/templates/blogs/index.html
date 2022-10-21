@@ -1,0 +1,23 @@
+<!-- {# 
+    TODO: SOAL No. 2 Implementasikan template ini untuk menampilkan daftar semua blog.
+    Daftar blog ditampilkan menggunakan unordered list.
+    Setiap list item harus berupa hyperlink yang jika diklik akan menampilkan semua entry dari blog tersebut.
+#} -->
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../../static/blogs/style.css">
+</head>
+<body>
+    <h1>Daftar Blog</h1>
+    
+    {% if blogs %}
+    <ul>
+        {% for blog in blogs %}
+        <li>
+            <a href="/blogs/entry/{{blog.id}}">{{blog.name}} : {{blog.tagline}}</a>
+        </li>
+       {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

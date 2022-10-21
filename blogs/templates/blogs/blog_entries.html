@@ -1,0 +1,10 @@
+<h1>Blog {{blog.name}}</h1>
+<ul>
+    {% for entry in blog.entry_set.all %}
+        <li>
+            <a href="{% url 'blogs:entry_detail' entry.id %}">{{entry.headline}}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+Lihat <a href="{% url 'blogs:index'  %}">semua blogs</a> di website ini.

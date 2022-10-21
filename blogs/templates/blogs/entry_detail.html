@@ -1,0 +1,12 @@
+<h1>{{entry.headline}}</h1>
+<h4>Ditulis oleh: {% for author in entry.authors.all %}
+    <a href="{% url 'blogs:author_entries' author.id %}">{{author.name}}</a> 
+    {% endfor %}
+    pada tanggal {{entry.pub_date}}
+</h4>
+
+<h4> Di dalam Blog: <a href="{% url 'blogs:blog_entries' entry.blog.id %}">{{entry.blog.name}}</a>
+
+</h4>
+
+<p>{{entry.body_text|linebreaks}}</p>
